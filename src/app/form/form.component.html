@@ -1,0 +1,15 @@
+<form action="">
+    <div class="wrapper">
+        <div class="form-item">
+            <label for="">Imie</label>
+            <input type="text" required [value]="name" (input)="onInputChange($event)" />{{name}}
+        </div>
+        <div class=" form-item">
+            <label for="">email</label>
+            <input type="email" required (input)="onInputChange($event)">
+        </div>
+        <button [disabled]="!isDisabled" class="btn" (click)="show()">Dalej</button>
+        <p [class.hidden]="false">Poka</p>
+        <p [ngClass]="isVisible? 'hidden': 'not-hidden'">ngClass</p>
+    </div>
+</form>

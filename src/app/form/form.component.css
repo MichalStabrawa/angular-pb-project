@@ -1,0 +1,26 @@
+.form-item {
+    padding:5px 0;
+}
+
+.form-item label {
+margin-right: 20px;;
+}
+
+.form-item input {
+    min-width: 300px;
+    height: 30px;
+}
+
+.btn {
+    min-width: 150px;
+    min-height: 45px;
+    background: goldenrod;
+    border: 1px solid transparent;
+    border-radius:5px;
+}
+.hidden {
+    color: red;
+}
+.not-hidden {
+    color: blue;
+}
