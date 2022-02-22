@@ -2,6 +2,7 @@ body {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Monoton', cursive;
 }
 
 .main {
@@ -16,6 +17,9 @@ body {
     background: goldenrod;
     border: 1px solid transparent;
     border-radius:5px;
+}
+h1 {
+    font-family: 'Monoton', cursive;;
 }
 
 .header {
