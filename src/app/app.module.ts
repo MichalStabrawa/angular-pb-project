@@ -4,10 +4,12 @@ import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from "./app.component";
 import { FormComponent } from "./form/form.component";
+import { TetrisCoreModule } from "ngx-tetris";
+import { GameComponent } from "./game/game.component";
 
 @NgModule({
-    declarations: [AppComponent, FormComponent],
-    imports: [BrowserModule, FormsModule],
+    declarations: [AppComponent, FormComponent, GameComponent],
+    imports: [BrowserModule, FormsModule, TetrisCoreModule],
     providers: [],
     bootstrap: [AppComponent],
 })

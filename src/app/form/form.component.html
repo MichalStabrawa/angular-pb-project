@@ -2,15 +2,17 @@
     <div class="wrapper">
         <div class="form-item">
             <label for="">Imie</label>
-            <input type="text" required [(ngModel)]="name" [ngModelOptions]="{standalone:true}" />{{name}}
+            <input type="text" required [(ngModel)]="name" value="name" [ngModelOptions]="{standalone:true}" />{{name}}
         </div>
         <div class=" form-item">
             <label for="">email</label>
-            <input type="email" required [(ngModel)]="email" [ngModelOptions]="{standalone:true}" />{{email}}
+            <input type="email" required [(ngModel)]="email" [ngModelOptions]="{standalone:true}"
+                (change)="addNewItem(name)" />{{email}}
         </div>
-        <button [disabled]="!isDisabled" class="btn" (click)="show()">Dalej</button>
-        <p [class.hidden]="false">Poka</p>
-        <p [ngClass]="isVisible? 'hidden': 'not-hidden'">ngClass</p>
+        <button class="btn" (click)="addNewItem(name)">Dalej</button>
+
+        Today's item: {{item}}
+
     </div>
 
 </form>
