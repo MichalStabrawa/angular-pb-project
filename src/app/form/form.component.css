@@ -3,7 +3,9 @@
 }
 
 .form-item label {
-margin-right: 20px;;
+margin-right: 20px;
+min-width: 150px;
+display: inline-block;
 }
 
 .form-item input {
@@ -23,4 +25,13 @@ margin-right: 20px;;
 }
 .not-hidden {
     color: blue;
+}
+
+.wrapper {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: column;
 }

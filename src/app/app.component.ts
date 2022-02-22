@@ -24,4 +24,8 @@ export class AppComponent {
         this.user = user;
         this.flag = true;
     }
+
+    goBack() {
+        this.flag = false;
+    }
 }
