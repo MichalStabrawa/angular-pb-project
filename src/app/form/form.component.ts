@@ -1,5 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
+export interface User {
+    name: string;
+    email: string;
+}
+
 @Component({
     selector: "app-form",
     templateUrl: "./form.component.html",
@@ -7,7 +12,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 })
 export class FormComponent implements OnInit {
     @Input() item = ""; // decorate the property with @Input()
-    @Output() newItemEvent = new EventEmitter<string>();
+    @Output() newItemEvent = new EventEmitter<User>();
 
     name: string = "";
     email: string = "";
@@ -15,13 +20,16 @@ export class FormComponent implements OnInit {
     isVisible: boolean = false;
     test = "";
 
-    show() {
-        alert("Dziala");
-    }
+    addNewItem(value: string, el: string) {
+        const user: User = {
+            name: value,
+            email: el,
+        };
 
-    addNewItem(value: string) {
-        this.newItemEvent.emit(value);
-        console.log(value);
+        this.newItemEvent.emit(user);
+
+        console.log("name", value);
+        console.log("el", el);
     }
 
     constructor() {}

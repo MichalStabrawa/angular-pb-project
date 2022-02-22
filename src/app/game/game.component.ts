@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { User } from "../form/form.component";
 
 @Component({
     selector: "app-game",
@@ -6,8 +7,7 @@ import { Component, OnInit, Input } from "@angular/core";
     styleUrls: ["./game.component.css"],
 })
 export class GameComponent implements OnInit {
-    @Input() item1 = ""; // decorate the property with @Input()
-    @Input() item2 = "";
+    @Input() user!: User; // decorate the property with @Input()
 
     constructor() {}
 

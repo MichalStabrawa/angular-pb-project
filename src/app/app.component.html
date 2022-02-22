@@ -1,5 +1,6 @@
+<nav class="nav"><button class="btn" *ngIf="flag">Wstecz</button></nav>
 <div class="main">
   <h1>Angular snake</h1>
   <app-form *ngIf="!flag" [item]="currentItem" (newItemEvent)="addItem($event)"></app-form>
-  <app-game [item1]="name"></app-game>
+  <app-game *ngIf="flag" [user]="user"></app-game>
 </div>

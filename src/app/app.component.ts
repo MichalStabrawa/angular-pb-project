@@ -1,5 +1,8 @@
 import { Component } from "@angular/core";
-
+interface User {
+    name: string;
+    email: string;
+}
 @Component({
     selector: "app-root",
     templateUrl: "./app.component.html",
@@ -12,12 +15,13 @@ export class AppComponent {
     currentItem = "Television";
     name = "";
     email = "";
+    user: User = {
+        name: "",
+        email: "",
+    };
 
-    addItem(newItem: string) {
-        this.name = newItem;
-    }
-
-    addEmail(newEmail: string) {
-        this.email = newEmail;
+    addItem(user: User) {
+        this.user = user;
+        this.flag = true;
     }
 }
