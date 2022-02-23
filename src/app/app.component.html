@@ -1,6 +1,7 @@
-<nav class="nav"><button class="btn" *ngIf="flag" (click)="goBack()">Wstecz</button></nav>
+<nav class="nav"></nav>
 <header class="header">
-  <h1>Angular snake</h1>
+  <h1>Angular Tetris</h1>
+  <span><button class="btn" *ngIf="flag" (click)="goBack()">Wstecz</button></span>
 </header>
 <div class="main">
   <app-form *ngIf="!flag" [item]="currentItem" (newItemEvent)="addItem($event)"></app-form>
