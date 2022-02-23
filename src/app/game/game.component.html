@@ -4,33 +4,34 @@
         <h2>Your name Yor name : {{user.name|uppercase}} your email:{{user.email | lowercase}}</h2>
 
         <div class="timer">
-            <div class="timer-item"><span>Time</span>{{timerHours}}:{{timerMinutes}}:{{timerSeconds}}</div>
-            <div class="timer-item">
-                <span>Count :{{counter}}</span>
+            <div class="timer-item"><span>Time</span>{{timerHours}}:{{timerMinutes < 10? '0' :
+                    null}}{{timerMinutes}}:{{timerSeconds < 10? '0' : null}}{{timerSeconds}}</div>
+                    <div class="timer-item">
+                        <span>Count :{{counter}}</span>
+                    </div>
+                    <div class="timer-item">
+                        {{status}}
+                    </div>
             </div>
-            <div class="timer-item">
-                {{status}}
+            <div class="game-over">
+                <h3 *ngIf="endGame">GAME OVER!!!!</h3>
             </div>
         </div>
-        <div class="game-over">
-            <h3 *ngIf="endGame">GAME OVER!!!!</h3>
+        <div class="game-item">
+            <tetris-core #game (lineCleared)="onGrow()" (gameOver)="gameOver()"></tetris-core>
+
+
+        </div>
+        <div class="game-item">
+            <div>
+                <button (click)="onStart()">Start</button>
+                <button (click)="onPauseSet()">Stop</button>
+            </div>
+
+            <button (click)="onReset()">Reset</button>
+            <button (click)="game.actionRotate()">Rotate</button>
+            <button (click)="game.actionLeft()">Left</button>
+            <button (click)="game.actionRight()">Right</button>
+            <button (click)="game.actionDown()">Down</button>
         </div>
     </div>
-    <div class="game-item">
-        <tetris-core #game (lineCleared)="onGrow()" (gameOver)="gameOver()"></tetris-core>
-
-
-    </div>
-    <div class="game-item">
-        <div>
-            <button (click)="onStart()">Start</button>
-            <button (click)="onPauseSet()">Stop</button>
-        </div>
-
-        <button (click)="onReset()">Reset</button>
-        <button (click)="game.actionRotate()">Rotate</button>
-        <button (click)="game.actionLeft()">Left</button>
-        <button (click)="game.actionRight()">Right</button>
-        <button (click)="game.actionDown()">Down</button>
-    </div>
-</div>
