@@ -1,4 +1,16 @@
 .game {
-    border-top: 1px solid grey;
-    padding-bottom: 50px;;
+    padding-bottom: 50px;
+}
+
+.first {
+    padding: 20px 0;
+}
+
+.timer {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 2rem;
+    padding: 20px 20px;
+    background: greenyellow;
+    display: flex;
+    justify-content: space-around;
 }

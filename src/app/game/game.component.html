@@ -1,14 +1,33 @@
 <div class="game">
     <h2>Testris game</h2>
-    <div class="game-item">
-        Yor name : {{user.name}} Your email:{{user.email | uppercase}}
+    <div class="game-item first">
+        <h2>Your name Yor name : {{user.name|uppercase}} your email:{{user.email | lowercase}}</h2>
+
+        <div class="timer">
+            <div class="timer-item"><span>Time</span>{{timerHours}}:{{timerMinutes}}:{{timerSeconds}}</div>
+            <div class="timer-item">
+                <span>Count :{{counter}}</span>
+            </div>
+            <div class="timer-item">
+                {{status}}
+            </div>
+        </div>
+        <div class="game-over">
+            <h3 *ngIf="endGame">GAME OVER!!!!</h3>
+        </div>
     </div>
     <div class="game-item">
-        <tetris-core #game></tetris-core>
+        <tetris-core #game (lineCleared)="onGrow()" (gameOver)="gameOver()"></tetris-core>
 
-        <button (click)="game.actionStart()">Start</button>
-        <button (click)="game.actionStop()">Stop</button>
-        <button (click)="game.actionReset()">Reset</button>
+
+    </div>
+    <div class="game-item">
+        <div>
+            <button (click)="onStart()">Start</button>
+            <button (click)="onPauseSet()">Stop</button>
+        </div>
+
+        <button (click)="onReset()">Reset</button>
         <button (click)="game.actionRotate()">Rotate</button>
         <button (click)="game.actionLeft()">Left</button>
         <button (click)="game.actionRight()">Right</button>
