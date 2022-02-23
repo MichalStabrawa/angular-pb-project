@@ -2,13 +2,13 @@
     <div class="wrapper">
         <div class="form-item">
             <label for="">Imie</label>
-            <input type="text" required [(ngModel)]="name" value="name" [ngModelOptions]="{standalone:true}"
-                #myInput="ngModel" />{{name}}
+            <input type="text" min="3" placeholder="write your name" required [(ngModel)]="name" value="name"
+                [ngModelOptions]="{standalone:true}" #myInput="ngModel" />{{name}}
         </div>
         <div class=" form-item">
             <label for="">email</label>
-            <input type="email" required [(ngModel)]="email" [ngModelOptions]="{standalone:true}"
-                #myEmail="ngModel" />{{email}}
+            <input type="email" required [(ngModel)]="email" [ngModelOptions]="{standalone:true}" #myEmail="ngModel"
+                placeholder="write your email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />{{email}}
         </div>
         <button class="btn" (click)="addNewItem(name,email)"
             [disabled]="!myEmail.valid || !myInput.valid">Dalej</button>
