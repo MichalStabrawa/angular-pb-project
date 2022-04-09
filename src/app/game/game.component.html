@@ -1,8 +1,7 @@
 <div class="game">
     <h2>Testris game</h2>
     <div class="game-item first">
-        <h2>Your name Yor name : {{user.name|uppercase}} your email:{{user.email | lowercase}}</h2>
-
+        <h2>Your name : {{user.name|uppercase}} your email:{{user.email | lowercase}}</h2>
         <div class="timer">
             <div class="timer-item"><span>Time</span>{{timerHours}}:{{timerMinutes < 10? '0' :
                     null}}{{timerMinutes}}:{{timerSeconds < 10? '0' : null}}{{timerSeconds}}</div>
