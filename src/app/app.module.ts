@@ -1,16 +1,22 @@
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { FormsModule } from "@angular/forms";
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
-import { AppComponent } from "./app.component";
-import { FormComponent } from "./form/form.component";
-import { TetrisCoreModule } from "ngx-tetris";
-import { GameComponent } from "./game/game.component";
+import { AppComponent } from './app.component';
+import { FormComponent } from './form/form.component';
+import { TetrisCoreModule } from 'ngx-tetris';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
-    declarations: [AppComponent, FormComponent, GameComponent],
-    imports: [BrowserModule, FormsModule, TetrisCoreModule],
-    providers: [],
-    bootstrap: [AppComponent],
+  declarations: [AppComponent, FormComponent, GameComponent],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    TetrisCoreModule,
+    RouterModule.forRoot([]),
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
