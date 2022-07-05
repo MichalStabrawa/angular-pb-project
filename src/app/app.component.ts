@@ -1,31 +1,35 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
 interface User {
-    name: string;
-    email: string;
+  name: string;
+  email: string;
 }
 @Component({
-    selector: "app-root",
-    templateUrl: "./app.component.html",
-    styleUrls: ["./app.component.css"],
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-    title = "angular-snake";
-    flag = false;
-    veganValue = false;
-    currentItem = "Television";
-    name = "";
-    email = "";
-    user: User = {
-        name: "",
-        email: "",
-    };
+  constructor(private _router: Router) {}
+  title = 'angular-snake';
+  flag = false;
+  veganValue = false;
+  currentItem = 'Television';
+  name = '';
+  email = '';
+  user: User = {
+    name: '',
+    email: '',
+  };
 
-    addItem(user: User) {
-        this.user = user;
-        this.flag = true;
-    }
+  addItem(user: User) {
+    this.user = user;
+    this.flag = true;
+  }
 
-    goBack() {
-        this.flag = false;
-    }
+  goBack() {
+    this.flag = false;
+    this._router.navigate(['/A']);
+  }
 }
