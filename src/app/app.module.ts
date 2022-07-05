@@ -14,7 +14,11 @@ import { GameComponent } from './game/game.component';
     BrowserModule,
     FormsModule,
     TetrisCoreModule,
-    RouterModule.forRoot([]),
+    RouterModule.forRoot([
+      { path: 'A', component: FormComponent },
+      { path: 'B', component: GameComponent },
+      { path: '**', redirectTo: '/src/app/form/' },
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent],
