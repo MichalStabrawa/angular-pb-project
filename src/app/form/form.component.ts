@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 export interface User {
   name: string;
@@ -21,14 +21,10 @@ export class FormComponent implements OnInit {
   isVisible: boolean = false;
   test = '';
 
-  addNewItem(value: string, el: string, event: void) {
+  addNewItem(value: string, el: string) {
     const user: User = {
       name: value,
       email: el,
-    };
-
-    const showB = () => {
-      this._router.navigate(['/A']);
     };
 
     this.newItemEvent.emit(user);
