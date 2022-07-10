@@ -6,7 +6,6 @@ import { StorageService } from './storage.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [StorageService],
 })
 export class AppComponent {
   title = 'angular-snake';

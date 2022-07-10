@@ -26,6 +26,7 @@ export class StorageService {
   addItem(user: User) {
     this._user = user;
     this._flag = !this._flag;
+    console.log(this._flag);
   }
 
   returnFlag() {

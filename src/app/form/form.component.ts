@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { StorageService } from '../storage.service';
 
 export interface User {
@@ -28,11 +29,13 @@ export class FormComponent implements OnInit {
 
     this._storage.addItem(user);
 
+    this._router.navigate(['/B']);
+
     console.log('name', value);
     console.log('el', el);
   }
 
-  constructor(private _storage: StorageService) {}
+  constructor(private _storage: StorageService, private _router: Router) {}
 
   ngOnInit(): void {}
 }
