@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { StorageService } from './storage.service';
 
 @Component({
@@ -14,15 +15,16 @@ export class AppComponent {
   currentItem = 'Television';
   name = '';
   email = '';
-  public flag: boolean = false;
-  user = {
-    name: '',
-    email: '',
-  };
+  public flag!: boolean;
 
-  constructor(private _storage: StorageService) {}
+  constructor(private _storage: StorageService, private _router: Router) {}
 
   ngOnInit(): void {
     this.flag = this._storage.returnFlag();
+  }
+
+  goBack() {
+    this.flag = false;
+    this._router.navigate(['/A']);
   }
 }
