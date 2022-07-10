@@ -19,7 +19,9 @@ export class AppComponent {
   constructor(private _storage: StorageService, private _router: Router) {}
 
   ngOnInit(): void {
-    this.flag = this._storage.returnFlag();
+    this._storage.getFlag().subscribe((click) => {
+      this.flag = click;
+    });
   }
 
   goBack() {

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 
 interface User {
   name: string;
@@ -11,6 +12,7 @@ interface User {
 export class StorageService {
   private _secret = 'some secret string';
   private _flag: boolean = false;
+  private actualFlag = new Subject<boolean>();
 
   private _user: User = {
     name: '',
@@ -25,12 +27,12 @@ export class StorageService {
 
   addItem(user: User) {
     this._user = user;
-    this._flag = !this._flag;
-    console.log(this._flag);
+
+    this.actualFlag.next((this._flag = !this._flag));
   }
 
-  returnFlag() {
-    return this._flag;
+  getFlag(): Observable<boolean> {
+    return this.actualFlag.asObservable();
   }
 
   readUser() {
