@@ -10,7 +10,7 @@ interface User {
 })
 export class StorageService {
   private _secret = 'some secret string';
-  private flag = false;
+  private flag: boolean = false;
 
   private _user: User = {
     name: '',
@@ -25,7 +25,7 @@ export class StorageService {
 
   addItem(user: User) {
     this._user = user;
-    this.flag = true;
+    this.flag = !this.flag;
   }
 
   returnFlag() {

@@ -4,6 +4,6 @@
     <span><button class="btn" *ngIf="flag">Wstecz</button></span>
 </header>
 <div class="main">
-    <app-form *ngIf="!flag" [item]="currentItem"></app-form>
+    <app-form *ngIf="!flag"></app-form>
     <app-game *ngIf="flag"></app-game>
 </div>

@@ -12,7 +12,6 @@ interface User {
   selector: 'app-game',
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.css'],
-  providers: [StorageService],
 })
 export class GameComponent implements OnInit {
   @ViewChild(TetrisCoreComponent)

@@ -14,7 +14,7 @@ export class AppComponent {
   currentItem = 'Television';
   name = '';
   email = '';
-  flag: boolean = false;
+  public flag: boolean = false;
   user = {
     name: '',
     email: '',
