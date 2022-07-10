@@ -22,10 +22,14 @@ export class AppComponent {
     this._storage.getFlag().subscribe((click) => {
       this.flag = click;
     });
+    this._storage.goBack(this.flag).subscribe((e) => {
+      this.flag = e;
+    });
   }
 
   goBack() {
     this.flag = false;
+    this._storage.goBack(this.flag);
     this._router.navigate(['/A']);
   }
 }

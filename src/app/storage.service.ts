@@ -38,4 +38,9 @@ export class StorageService {
   readUser() {
     return this._user;
   }
+
+  goBack(flag: boolean) {
+    this._flag = flag;
+    return this.actualFlag.asObservable();
+  }
 }
