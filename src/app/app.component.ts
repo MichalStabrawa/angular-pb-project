@@ -1,31 +1,28 @@
-import { Component } from "@angular/core";
-interface User {
-    name: string;
-    email: string;
-}
+import { Component } from '@angular/core';
+import { StorageService } from './storage.service';
+
 @Component({
-    selector: "app-root",
-    templateUrl: "./app.component.html",
-    styleUrls: ["./app.component.css"],
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  providers: [StorageService],
 })
 export class AppComponent {
-    title = "angular-snake";
-    flag = false;
-    veganValue = false;
-    currentItem = "Television";
-    name = "";
-    email = "";
-    user: User = {
-        name: "",
-        email: "",
-    };
+  title = 'angular-snake';
 
-    addItem(user: User) {
-        this.user = user;
-        this.flag = true;
-    }
+  veganValue = false;
+  currentItem = 'Television';
+  name = '';
+  email = '';
+  flag: boolean = false;
+  user = {
+    name: '',
+    email: '',
+  };
 
-    goBack() {
-        this.flag = false;
-    }
+  constructor(private _storage: StorageService) {}
+
+  ngOnInit(): void {
+    this.flag = this._storage.returnFlag();
+  }
 }
