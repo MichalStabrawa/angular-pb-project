@@ -17,22 +17,24 @@
                 <h3 *ngIf="endGame">GAME OVER!!!!</h3>
             </div>
         </div>
-        <div class="game-item">
-            <tetris-core #game (lineCleared)="onGrow()" (gameOver)="gameOver()"></tetris-core>
-
-
-        </div>
-        <div class="game-item">
-            <div>
-                <button (click)="onStart()">Start</button>
-                <button (click)="onPauseSet()">Stop</button>
+        <section class="game-wraperr">
+            <div class="game-item">
+                <tetris-core #game (lineCleared)="onGrow()" (gameOver)="gameOver()"></tetris-core>
             </div>
+            <div class="game-item">
+                <div>
+                    <button (click)="onStart()">Start</button>
+                    <button (click)="onPauseSet()">Stop</button>
+                </div>
 
-            <button (click)="onReset()">Reset</button>
-            <button (click)="game.actionRotate()">Rotate</button>
-            <button (click)="game.actionLeft()">Left</button>
-            <button (click)="game.actionRight()">Right</button>
-            <button (click)="game.actionDown()">Down</button>
-        </div>
+                <button (click)="onReset()">Reset</button>
+                <button (click)="game.actionRotate()">Rotate</button>
+                <button (click)="game.actionLeft()">Left</button>
+                <button (click)="game.actionRight()">Right</button>
+                <button (click)="game.actionDown()">Down</button>
+            </div>
+        </section>
+
+
         <app-scores></app-scores>
     </div>
