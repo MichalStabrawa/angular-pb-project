@@ -1,0 +1,13 @@
+<div>
+    <h3>Scores</h3>
+    <table>
+        <tr *ngFor="let item of scores">
+
+            <td>{{item.name}}</td>
+            <td>{{item.score}}</td>
+        </tr>
+
+    </table>
+    <button (click)="sortScores('asc')">Sort by score ascending</button>
+    <button (click)="sortScores('desc')">Sort by score descending</button>
+</div>
