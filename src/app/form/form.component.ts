@@ -29,7 +29,7 @@ export class FormComponent implements OnInit {
   isDisabled: boolean = false;
   isVisible: boolean = false;
   test = '';
-  color: string = 'black';
+  color: string = '';
 
   addNewItem(value: string, el: string) {
     const user: User = {
@@ -54,7 +54,7 @@ export class FormComponent implements OnInit {
   ) {
     this.spamForm = this.fb.group({
       name: ['', [Validators.required, Validators.min(5)]],
-      email: ['', [Validators.required, Validators.email], Validators.min(5)],
+      email: ['', [Validators.required, Validators.email, Validators.min(5)]],
     });
 
     this.spamForm
