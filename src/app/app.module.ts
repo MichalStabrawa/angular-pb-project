@@ -2,9 +2,10 @@ import { ScoresService } from './game/scores/scores.service';
 import { StorageService } from './storage.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+
 import { RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
@@ -25,6 +26,7 @@ import { APIInterceptor } from './api.interceptor';
       { path: 'B/:color', component: GameComponent },
       { path: '**', redirectTo: '/A' },
     ]),
+    ReactiveFormsModule,
   ],
   providers: [
     StorageService,
