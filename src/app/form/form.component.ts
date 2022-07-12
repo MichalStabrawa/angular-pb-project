@@ -29,7 +29,6 @@ export class FormComponent implements OnInit {
   isDisabled: boolean = false;
   isVisible: boolean = false;
   test = '';
-  color: string = '';
 
   addNewItem(value: string, el: string) {
     const user: User = {
@@ -38,8 +37,6 @@ export class FormComponent implements OnInit {
     };
 
     this._storage.addItem(user);
-
-    this._router.navigate(['/B', this.color]);
 
     console.log('name', value);
     console.log('el', el);
@@ -55,6 +52,9 @@ export class FormComponent implements OnInit {
     this.spamForm = this.fb.group({
       name: ['', [Validators.required, Validators.min(5)]],
       email: ['', [Validators.required, Validators.email, Validators.min(5)]],
+      settings: this.fb.group({
+        color: ['value', []],
+      }),
     });
 
     this.spamForm
@@ -68,10 +68,7 @@ export class FormComponent implements OnInit {
   public onSubmit(form: any): void {
     console.log('Form values: ', form.value);
     this.addNewItem(form.value.name, form.value.email);
-  }
-
-  onColorChange(event: any): void {
-    this.color = event.target.value;
+    this._router.navigate(['/B', form.value.settings.color]);
   }
 
   ngOnInit(): void {}
