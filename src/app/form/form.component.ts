@@ -10,10 +10,18 @@ export interface User {
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css'],
+  styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit {
   @Input() item = ''; // decorate the property with @Input()
+
+  public availableColors = [
+    {
+      name: 'normal',
+      value: '',
+    },
+    { name: 'hight-contrast', value: 'black-and-white' },
+  ];
 
   name: string = '';
   email: string = '';
@@ -37,6 +45,10 @@ export class FormComponent implements OnInit {
   }
 
   constructor(private _storage: StorageService, private _router: Router) {}
+
+  onColorChange(event: any): void {
+    this.color = event.target.value;
+  }
 
   ngOnInit(): void {}
 }
