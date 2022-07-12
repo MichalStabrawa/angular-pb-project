@@ -1,9 +1,9 @@
 <nav class="nav"></nav>
 <header class="header">
-  <h1>Angular Tetris</h1>
-  <span><button class="btn" *ngIf="flag" (click)="goBack()">Wstecz</button></span>
+    <h1>Angular Tetris</h1>
+    <span><button class="btn" *ngIf="flag" (click)="goBack()">Wstecz</button></span>
 </header>
 <div class="main">
-  <app-form *ngIf="!flag" [item]="currentItem" (newItemEvent)="addItem($event)"></app-form>
-  <app-game *ngIf="flag" [user]="user"></app-game>
+    <router-outlet> </router-outlet>
 </div>
+<app-footer></app-footer>

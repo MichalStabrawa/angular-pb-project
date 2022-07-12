@@ -1,5 +1,6 @@
 .game {
     padding-bottom: 50px;
+    font-family: "Chakra Petch", sans-serif;
 }
 
 .first {
@@ -14,3 +15,15 @@
     display: flex;
     justify-content: space-around;
 }
+
+.game-wraperr {
+    display: flex;
+    margin-bottom: 20px;
+    button {
+        height: 30px;
+        min-width: 150px;
+        margin: 5px;
+    }
+}
+
+//Tetris style

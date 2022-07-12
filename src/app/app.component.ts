@@ -1,31 +1,35 @@
-import { Component } from "@angular/core";
-interface User {
-    name: string;
-    email: string;
-}
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { StorageService } from './storage.service';
+
 @Component({
-    selector: "app-root",
-    templateUrl: "./app.component.html",
-    styleUrls: ["./app.component.css"],
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-    title = "angular-snake";
-    flag = false;
-    veganValue = false;
-    currentItem = "Television";
-    name = "";
-    email = "";
-    user: User = {
-        name: "",
-        email: "",
-    };
+  title = 'angular-snake';
 
-    addItem(user: User) {
-        this.user = user;
-        this.flag = true;
-    }
+  veganValue = false;
+  currentItem = 'Television';
+  name = '';
+  email = '';
+  public flag!: boolean;
 
-    goBack() {
-        this.flag = false;
-    }
+  constructor(private _storage: StorageService, private _router: Router) {}
+
+  ngOnInit(): void {
+    this._storage.getFlag().subscribe((click) => {
+      this.flag = click;
+    });
+    this._storage.goBack(this.flag).subscribe((e) => {
+      this.flag = e;
+    });
+  }
+
+  goBack() {
+    this.flag = false;
+    this._storage.goBack(this.flag);
+    this._router.navigate(['/A']);
+  }
 }
