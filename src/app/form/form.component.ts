@@ -53,8 +53,8 @@ export class FormComponent implements OnInit {
     public fb: FormBuilder
   ) {
     this.spamForm = this.fb.group({
-      name: [''],
-      email: ['', [Validators.required, Validators.email]],
+      name: ['', [Validators.required, Validators.min(5)]],
+      email: ['', [Validators.required, Validators.email], Validators.min(5)],
     });
 
     this.spamForm
