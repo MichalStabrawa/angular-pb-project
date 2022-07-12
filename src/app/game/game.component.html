@@ -19,7 +19,7 @@
         </div>
         <section class="game-wraperr">
             <div class="game-item">
-                <tetris-core #game (lineCleared)="onGrow()" (gameOver)="gameOver()" [ngClass]="'black-and-white '">
+                <tetris-core #game (lineCleared)="onGrow()" (gameOver)="gameOver()" [ngClass]="this.color">
                 </tetris-core>
             </div>
             <div class="game-item">

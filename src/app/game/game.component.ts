@@ -1,5 +1,6 @@
 import { StorageService } from './../storage.service';
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { TetrisCoreComponent } from 'ngx-tetris';
 
@@ -41,8 +42,16 @@ export class GameComponent implements OnInit {
   public status: string = 'Ready to game:';
   public endGame: boolean = false;
   public user!: User;
+  public color: string = '';
 
-  constructor(private _storage: StorageService) {}
+  constructor(
+    private _storage: StorageService,
+    private _route: ActivatedRoute
+  ) {
+    this._route.params.subscribe((params) => {
+      this.color = params['color'];
+    });
+  }
 
   ngOnInit(): void {
     this.text = this._storage.readSecret();

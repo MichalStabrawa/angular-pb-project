@@ -20,6 +20,7 @@ export class FormComponent implements OnInit {
   isDisabled: boolean = false;
   isVisible: boolean = false;
   test = '';
+  color: string = 'black';
 
   addNewItem(value: string, el: string) {
     const user: User = {
@@ -29,7 +30,7 @@ export class FormComponent implements OnInit {
 
     this._storage.addItem(user);
 
-    this._router.navigate(['/B']);
+    this._router.navigate(['/B', this.color]);
 
     console.log('name', value);
     console.log('el', el);

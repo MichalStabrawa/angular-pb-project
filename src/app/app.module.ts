@@ -22,7 +22,7 @@ import { APIInterceptor } from './api.interceptor';
     TetrisCoreModule,
     RouterModule.forRoot([
       { path: 'A', component: FormComponent },
-      { path: 'B', component: GameComponent },
+      { path: 'B/:color', component: GameComponent },
       { path: '**', redirectTo: '/A' },
     ]),
   ],
