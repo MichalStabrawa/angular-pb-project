@@ -13,9 +13,10 @@ import { TetrisCoreModule } from 'ngx-tetris';
 import { GameComponent } from './game/game.component';
 import { ScoresComponent } from './game/scores/scores.component';
 import { APIInterceptor } from './api.interceptor';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, FormComponent, GameComponent, ScoresComponent],
+  declarations: [AppComponent, FormComponent, GameComponent, ScoresComponent, FooterComponent],
   imports: [
     HttpClientModule,
     BrowserModule,
