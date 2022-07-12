@@ -8,21 +8,13 @@
         <div class=" form-item">
             <label for="">email</label>
             <input type="text" formControlName="email" placeholder="write your email" />{{email}}
-
         </div>
-
         <div class="form-item" formGroupName="settings">
             <label for="">Color</label>
             <select formControlName="color">
-        <option *ngFor="let color of availableColors" value={{color.value}}>
-          {{ color.name }}
-        </option>
-      </select>
+                <option *ngFor="let color of availableColors" value={{color.value}}> {{ color.name }}</option>
+            </select>
         </div>
-
-
         <button class="btn" [disabled]="!spamForm.valid">Dalej</button>
-
-
     </div>
 </form>
